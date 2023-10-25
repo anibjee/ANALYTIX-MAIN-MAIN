@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Lobster&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="\static\output.css" rel="stylesheet">
+    <!-- <link href="\static\output2.css" rel="stylesheet"> -->
+    <script>
+        function focusAboutSection() {
+            var section = document.getElementById("ab");
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        function focusHomeSection() {
+            var section = document.getElementById("homesection");
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        function focusContactUsSection() {
+            var section = document.getElementById("contactsection");
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</head>
+<body >
+    <div class="gradient-text">
+        <div class="s1">
+        <nav class="navbar">
+            <a href="" class="mnhd">Analytix</a>
+            <div class="ht">
+                <a href="#" onclick="focusHomeSection()"class="anc">Home</a>
+                <a href="" onclick="focusSection()"class="anc">Products</a>
+                <a href="" onclick="focusSection()"class="anc">Services</a>
+                <a href="#" onclick="focusAboutSection()"class="anc">About Us</a>
+                <a href="#" onclick="focusContactUsSection()"class="anc">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+<!-- 
+    <div class="fullbody">
+        <hr class="line">
+        {% for row in results %}
+        <div class="card-container">
+            <div class="card">
+                <div class="card-front">
+                    <div class="name">
+                      {{row[0]}}
+                    </div>
+                </div>
+                <div class="card-back">
+                    <p>Description</p>
+                    <p>{{row[1]}}</p>
+                    <p>₹{{row[2]}}</p>
+                </div>
+            </div>            
+        </div>
+        {% endfor %}
+    </div> -->
+    <h1>Filtered Results</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Company</th>
+            <th>Product</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>RAM</th>
+            <th>ROM</th>
+            <th>Processor</th>
+            <th>Expandable Storage</th>
+            <th>Front Camera</th>
+            <th>Rear Camera</th>
+            <th>SIM Slot</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td class="images"><img class="tableimg" src="{{ result[13] }}" alt=""></td>
+            <td>{{ result[3] }}</td>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+            <td>₹{{ result[2] }}</td>
+            <td>{{ result[6] }}</td>
+            <td>{{ result[7] }}</td>
+            <td>{{ result[8] }}</td>
+            <td>{{ result[12] }}</td>
+            <td>{{ result[9] }}</td>
+            <td>{{ result[10] }}</td>
+            <td>{{ result[11] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<hr class="line">
+        
+<div class="ft">
+    <a href="#"  onclick="focusHomeSection()" class="ancc">Home</a>
+    <a href="#"onclick="focusProductsSection()" class="ancc">Products</a>
+    <a href="#" onclick="focusSection()"class="ancc">Services</a>
+    <a href="#" onclick="focusAboutSection()" class="ancc">About Us</a>
+    <a href="#" onclick="focusContactUsSection()" class="ancc">Contact Us</a>
+</div>
+
+</body>
+</html>
